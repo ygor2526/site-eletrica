@@ -1,24 +1,88 @@
+e · CSS
+/* ==========================================================================
+   RGM Elétrica - Folha de estilos
+   Sumário:
+   1. Reset e base
+   2. Tipografia
+   3. Imagens (centralizadas)
+   4. Navegação
+   5. Introdução
+   6. Cards de serviços
+   7. Tabela de preços (centralizada)
+   8. Rodapé
+   9. Responsivo
+   ========================================================================== */
+ 
+ 
+/* 1. RESET E BASE
+   ========================================================================== */
 * {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
-
+ 
 html {
     scroll-behavior: smooth;
 }
-
+ 
 body {
     background-color: #f8fafc;
     color: #1e293b;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
-
+ 
+ 
+/* 2. TIPOGRAFIA
+   ========================================================================== */
+h1 {
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: clamp(60px, 10vw, 10px);
+    color: #111827;
+}
+h2 {
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: clamp(44px, 7vw, 80px);
+    color: #111827;
+}
+ 
+h3 {
+    color: #111827;
+    font-size: clamp(30px, 4vw, 50px);
+}
+ 
+h4 {
+    padding: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #111827;
+}
+ 
 span {
     color: #b45309;
     font-weight: bold;
 }
+ 
+hr {
+    margin: 30px;
+    border: 0;
+    border-top: 1px solid #facc15;
+}
+ 
+ 
+/* 3. IMAGENS (CENTRALIZADAS)
+   ========================================================================== */
+img {
+    display: block;
+    max-width: 900%;
+    margin-inline: auto;
+}
 
+ 
+/* 4. NAVEGAÇÃO
+   ========================================================================== */
 nav {
     background-color: #111827;
     color: #e5e7eb;
@@ -26,173 +90,167 @@ nav {
     font-weight: bold;
     border-bottom: 4px solid #facc15;
 }
-
+ 
 nav section {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
+ 
 #titulo h1 {
     color: #facc15;
 }
-
+ 
 #logo img {
-    display: flex;
     max-width: 300px;
 }
-
+ 
 #opcao {
     display: flex;
     gap: 30px;
-    justify-content: end;
+    justify-content: flex-end;
 }
-
+ 
 #opcao a {
     color: #e5e7eb;
     text-decoration: none;
     padding-bottom: 4px;
     border-bottom: 2px solid transparent;
 }
-
+ 
 #opcao a:hover,
 #opcao a:focus-visible {
     color: #facc15;
     border-bottom-color: #facc15;
     outline: none;
 }
-
-h2 {
-    text-align: center;
-    padding-bottom: 20px;
-    font-size: clamp(44px, 7vw, 80px);
-    color: #111827;
-}
-
+ 
+ 
+/* 5. INTRODUÇÃO
+   ========================================================================== */
 #introducao {
-    border-left: 5px solid #facc15;
-    background-color: rgba(250, 204, 21, 0.12);
-    margin: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 50px;
+    margin: 30px;
     padding: 30px;
+    border-left: 5px solid #facc15;
+    background-color: rgba(250, 204, 21, 0.12);
 }
-
+ 
 #introducao article {
     flex: 1 1 320px;
 }
-
+ 
 #introducao img {
-    display: flex;
     width: 100%;
     object-fit: cover;
-    justify-content: space-between;
 }
-
+ 
 #introducao p {
+    padding: 20px;
     font-size: 20px;
     color: #475569;
-    padding: 20px;
 }
-
+ 
+ 
+/* 6. CARDS DE SERVIÇOS
+   ========================================================================== */
 #titulocards {
-    padding-left: 40px;
     padding-top: 20px;
+    padding-left: 40px;
 }
-
-h3 {
-    color: #111827;
-    font-size: clamp(30px, 4vw, 50px);
-}
-
+ 
 #cards {
     display: flex;
     justify-content: center;
-    gap: 15px;
     align-items: stretch;
     flex-wrap: wrap;
+    gap: 15px;
     padding: 40px;
 }
-
+ 
 #cards p {
     padding: 10px;
     font-size: 20px;
     color: #334155;
 }
-
-h4 {
-    padding: 15px;
-    font-size: 25px;
-    font-weight: bold;
-    color: #111827;
-}
-
-.card img {
-    height: 400px;
-    width: 100%;
-    object-fit: cover;
-}
-
+ 
 .card {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    min-width: 280px;
+    padding: 20px;
     background-color: rgba(250, 204, 21, 0.1);
     border: 1px solid #e2e8f0;
     border-top: 5px solid #facc15;
-    padding: 20px;
-    width: 30%;
-    min-width: 280px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
 }
-
-hr {
-    margin: 30px;
-    border: 0;
-    border-top: 1px solid #facc15;
-}
-
-small {
-    margin: 40px;
-    color: #64748b;
-}
-
-footer p {
-    margin: 0 40px 15px;
-    color: #334155;
-    font-size: 18px;
-}
-
-table {
+ 
+.card img {
     width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+ 
+ 
+/* 7. TABELA DE PREÇOS (CENTRALIZADA)
+   ========================================================================== */
+table {
+    width: calc(100% - 80px);
+    max-width: 1100px;
+    margin: 30px auto;
     border-collapse: collapse;
-    margin: 10px;
 }
-
-th, td {
-    border: 1px solid #cbd5e1;
+ 
+th,
+td {
     padding: 10px;
+    border: 1px solid #cbd5e1;
     text-align: center;
+    vertical-align: middle;
 }
-
+ 
 th {
     background-color: #111827;
     color: #facc15;
 }
-
+ 
+ 
+/* 8. RODAPÉ
+   ========================================================================== */
+footer p {
+    margin: 0 40px 15px;
+    font-size: 18px;
+    color: #334155;
+}
+ 
+small {
+    margin: 40px;
+    color: #64748b;
+}
+ 
+ 
+/* 9. RESPONSIVO
+   ========================================================================== */
 @media (max-width: 700px) {
     nav section {
         flex-direction: column;
         gap: 15px;
     }
-
+ 
     .card {
         width: 100%;
     }
-
+ 
     .card img {
         height: 260px;
+    }
+ 
+    table {
+        width: calc(100% - 20px);
+        font-size: 14px;
     }
 }
